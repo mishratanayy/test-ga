@@ -17,7 +17,7 @@ jobs:
       - name: "Setting the environment variable"
         run: echo "USER=mishra" >> "$GITHUB_ENV" 
       - name: "Running the project again"
-        run: "make run"
+        run: "make all && make run"
       - name: "Cleaning up the project"
         run: "make clean"
       - run: echo "This job's status is ${{ job.status }}."
