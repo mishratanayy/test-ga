@@ -1,0 +1,17 @@
+name: Sample Actions Demo
+run-name: Building project by ${{ github.actor }}
+on: [push]
+jobs:
+  Run with default args:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "Checking environment variable"
+      - name: Building the project
+        run: |
+          make all
+      - run: echo "Executing project"
+      - run: "./user-project"
+      - run: echo "This job's status is ${{ job.status }}."
