@@ -10,7 +10,7 @@ jobs:
       - name: "List out files"
         run: ls
       - name: build-userproject
-        uses: .github/actions/userproject
+        uses: ./.github/actions/userproject
         id: userproject
         with:
           user: "Tanay Mishra"
