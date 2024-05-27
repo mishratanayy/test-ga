@@ -16,4 +16,9 @@ jobs:
       - name: "Running project with default values"
         uses: ./.github/actions/userproject
         id: userproject-default
+      - name: "Running project with overriden env variable"
+        uses: ./.github/actions/userproject
+        id: userproject-overriden
+        env:
+          USER: "mishra"
         
