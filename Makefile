@@ -6,7 +6,6 @@ CXXFLAGS = -Wall -std=c++17
 
 # Targets
 TARGET = user-project
-
 # Source files
 SRCS = main.cxx user.cxx
 
@@ -28,8 +27,8 @@ $(TARGET): $(OBJS)
 clean:
 	rm -f $(TARGET) $(OBJS)
 
-run:
-  ./$(TARGET)
+run: 
+	./$(TARGET)
 
 # Phony targets
 .PHONY: all clean
