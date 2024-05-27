@@ -12,7 +12,7 @@ runs:
       echo "Username: ${{ inputs.user }}"
       echo "Email: ${{ inputs.email }}"
     -name: "Building the project"
-      run: make all
+    run: make all
     -name: "Executing project"
     run: |
       make runargs id="1" user=${{ inputs.user }} email=${{ inputs.email }} 
