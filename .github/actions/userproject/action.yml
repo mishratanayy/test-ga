@@ -8,11 +8,16 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: "Printing the user and email received"
+      run: |
+        echo "User: ${{ inputs.user }}"
+        echo "Email: ${{ inputs.email }}"
+      shell: bash
     - name: "Building the project"
       run: make all
       shell: bash
     - name: "Executing project"
-      run: make runargs id="1" user=${{ inputs.user }} email=${{ inputs.email }}
+      run: make runargs id="1" user="${{inputs.user}}" email="${{inputs.email}}"
       shell: bash
     - name: "Cleaning up the project"
       run: make clean
