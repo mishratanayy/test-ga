@@ -7,11 +7,6 @@ inputs:
     default: ""
 runs:
   steps:
-    - name: "Logging name and email"
-      run: |
-      echo "Username: ${{ inputs.user }}"
-      echo "Email: ${{ inputs.email }}"
-     shell: bash
     - name: "Building the project"
      run: make all
      shell: bash
