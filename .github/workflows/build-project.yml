@@ -2,7 +2,7 @@ name: Sample Actions Demo
 run-name: Building project by ${{ github.actor }}
 on: [push]
 jobs:
-  Run with default args:
+  Run-with-default-args:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
