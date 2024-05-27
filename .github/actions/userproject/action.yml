@@ -11,11 +11,13 @@ runs:
       run: |
       echo "Username: ${{ inputs.user }}"
       echo "Email: ${{ inputs.email }}"
+     shell: bash
     - name: "Building the project"
      run: make all
+     shell: bash
     - name: "Executing project"
-     run: |
-      make runargs id="1" user=${{ inputs.user }} email=${{ inputs.email }} 
+     run: make runargs id="1" user=${{ inputs.user }} email=${{ inputs.email }}
+      shell: bash
     - name: "Cleaning up the project"
-     run: |
-      make clean
+     run: make clean
+     shell: bash
