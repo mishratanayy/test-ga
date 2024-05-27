@@ -14,7 +14,7 @@ User::User(){
 User::User(int id, std::string name, std::string email){
     m_id = id;
     m_name = name;
-    m_email = email; 
+    m_email = email;  
 }
 
 void User::setId(int id){
