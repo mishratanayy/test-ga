@@ -16,8 +16,12 @@ runs:
     - name: "Building the project"
       run: make all
       shell: bash
+    if: ${{ inputs.user != "" && inputs.email != "" }}
     - name: "Executing project"
       run: make runargs id="1" user="${{inputs.user}}" email="${{inputs.email}}"
+      shell: bash
+    if: ${{ inputs.user == "" || inputs.email == "" }}
+      run: make run
       shell: bash
     - name: "Cleaning up the project"
       run: make clean

@@ -13,3 +13,7 @@ jobs:
         with:
           user: "Tanay Mishra"
           email: "tanay.mishra@schrodinger.com"
+      - name: "Running project with default values"
+        uses: ./.github/actions/userproject
+        id: userproject-default
+        
