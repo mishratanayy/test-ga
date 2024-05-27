@@ -17,11 +17,11 @@ runs:
       run: make all
       shell: bash
     - if: ${{ inputs.user != '' && inputs.email != '' }}
-        run: make runargs id="1" user="${{inputs.user}}" email="${{inputs.email}}"
-        shell: bash
+      run: make runargs id="1" user="${{inputs.user}}" email="${{inputs.email}}"
+      shell: bash
     - if: ${{ inputs.user == '' || inputs.email == '' }}
-        run: make run
-        shell: bash
+      run: make run
+      shell: bash
     - name: "Cleaning up the project"
       run: make clean
       shell: bash
