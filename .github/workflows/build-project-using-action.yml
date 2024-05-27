@@ -7,13 +7,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: "List out files"
-        run: ls
       - name: build-userproject
         uses: ./.github/actions/userproject
         id: userproject
         with:
           user: "Tanay Mishra"
           email: "tanay.mishra@schrodinger.com"
-      - name: "List out files"
-        run: ls
