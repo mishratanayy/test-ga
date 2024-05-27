@@ -32,7 +32,7 @@ run:
 
 # pass command line argument to $Target 
 runargs: 
-	./$(TARGET) $(id) $(user) $(email)
+	./$(TARGET) "$(id)" "$(user)" "$(email)"
 
 # Phony targets
 .PHONY: all clean
