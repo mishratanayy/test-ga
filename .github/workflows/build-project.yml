@@ -12,8 +12,11 @@ jobs:
       - name: Building the project
         run: |
           make all
-      - run: echo "Executing project"
-      - run: "./user-project"
-      - run: "Cleaning object files" |
-        "make clean"
+      - name: echo "Executing project"
+        run: "./user-project"
+      - name: "Executing the project after changing environment variable"
+        run: echo "USER=mishra" >> "$GITHUB_ENV"
+        run: "./user-project"
+      - name: "Cleaning up the project"
+        run: "make clean"
       - run: echo "This job's status is ${{ job.status }}."
