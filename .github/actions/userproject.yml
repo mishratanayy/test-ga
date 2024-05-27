@@ -1,0 +1,22 @@
+inputs:
+  user:
+    description: Username for the user
+    default: ""
+  email:
+    description: Email for the user
+    default: ""
+runs:
+  steps:
+    -name: "Logging name and email"
+    run: |
+      echo "Username: ${{ inputs.user }}"
+      echo "Email: ${{ inputs.email }}"
+    -name: "Building the project"
+    run: |
+      make all
+    -name: "Executing project"
+    run: |
+      make runargs id="1" user=${{ inputs.user }} email=${{ inputs.email }} 
+    -name: "Cleaning up the project"
+    run: |
+      make clean

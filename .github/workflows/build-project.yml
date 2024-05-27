@@ -1,4 +1,4 @@
-name: Sample Actions Demo
+name: Building `user` project
 run-name: Building project by ${{ github.actor }}
 on: [push]
 jobs:

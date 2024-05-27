@@ -30,5 +30,9 @@ clean:
 run: 
 	./$(TARGET)
 
+# pass command line argument to $Target 
+runargs: 
+	./$(TARGET) $(id) $(user) $(email)
+
 # Phony targets
 .PHONY: all clean
