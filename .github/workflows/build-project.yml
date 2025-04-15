@@ -22,6 +22,6 @@ jobs:
           source venv/bin/activate
           yapf -q --style=pep8 -r random_folder
           if [[ $? -ne 0 ]]; then
-            echo "Python files are not properly formatted. Please refer to Readme.md to read about how to format them."
+            echo "::error Python files are not properly formatted. Please refer to Readme.md to read about how to format them."
             exit 1
           fi
