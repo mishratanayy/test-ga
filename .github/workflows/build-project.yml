@@ -1,8 +1,5 @@
 name: pycodestyle
-'on':
-  pull_request:
-    branches:
-      - main
+on: [push]
 jobs:
   yapf:
     runs-on: ubuntu-latest
