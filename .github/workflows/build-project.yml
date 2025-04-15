@@ -16,10 +16,10 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
           pip3 install -r random_folder/requirements.txt
-          ls -l
 
       - name: Yapf step
         run: |
+          source venv/bin/activate
           yapf --diff --style=pep8 -r random_folder
           if [[ $? -ne 0 ]]; then
             echo "Python files are not properly formatted. Please refer to Readme.md to read about how to format them."
