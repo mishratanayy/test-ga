@@ -1,27 +1,30 @@
+name: pycodestyle
 'on':
   pull_request:
     branches:
       - main
-name: pycodestyle
 jobs:
   yapf:
     runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.8'
-    - name: Install dependencies
-      run: |
-        python3 -m venv venv
-        source venv/bin/activate
-        pip3 install -r random_folder/requirements.txt
-        ls -l
-    - name: Yapf step
-      run: |
-        yapf --diff --style=pep8 -r random_folder
-        if [[ $? ]]; then
-          echo "Python files are not properly formatted. Please refer to Readme.md to read about how to format them."
-          exit 1
-        fi
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+          
+      - name: Install dependencies
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip3 install -r random_folder/requirements.txt
+          ls -l
+
+      - name: Yapf step
+        run: |
+          yapf --diff --style=pep8 -r random_folder
+          if [[ $? -ne 0 ]]; then
+            echo "Python files are not properly formatted. Please refer to Readme.md to read about how to format them."
+            exit 1
+          fi
